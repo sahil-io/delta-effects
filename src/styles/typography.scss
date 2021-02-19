@@ -1,0 +1,80 @@
+@layer base {
+  .heading {
+    @apply leading-normal font-bold;
+  }
+
+  h1 {
+    @apply heading text-4xl;
+  }
+
+  h2 {
+    @apply heading text-3xl;
+  }
+
+  h3 {
+    @apply heading text-2xl;
+  }
+
+  h4 {
+    @apply heading text-xl;
+  }
+
+  h5 {
+    @apply heading text-lg;
+  }
+}
+
+@layer components {
+  @responsive {
+    .h1 {
+      @apply heading text-4xl;
+    }
+
+    .h2 {
+      @apply heading text-3xl;
+    }
+
+    .h3 {
+      @apply heading text-2xl;
+    }
+
+    .h4 {
+      @apply heading text-xl;
+    }
+
+    .h5 {
+      @apply heading text-lg;
+    }
+  }
+}
+
+.content-panel * + address,
+.content-panel * + dl,
+.content-panel * + fieldset,
+.content-panel * + figure,
+.content-panel * + ol,
+.content-panel * + p,
+.content-panel * + pre {
+  margin-top: 20px;
+}
+
+.content-panel * + ul {
+  margin-top: 10px;
+}
+
+.content-panel a:not([class]) {
+  color: var(--color-secondary-500);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.content-panel ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.content-panel {
+  color: var(--color-shark-500);
+}

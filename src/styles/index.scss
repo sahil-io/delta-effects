@@ -1,0 +1,12 @@
+@import "variables";
+
+@tailwind base;
+
+//noinspection CssInvalidAtRule
+@tailwind components;
+
+@import "typography";
+@import "custom";
+
+@tailwind utilities;
+

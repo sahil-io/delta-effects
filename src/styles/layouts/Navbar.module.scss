@@ -1,0 +1,29 @@
+.dropdown_parent {
+  @apply relative;
+  .dropdown {
+    @apply absolute inset-x-0 bg-white py-3;
+    width: 200px;
+    background: #fff;
+    display: block;
+    z-index: 10;
+    transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid #eaeaea;
+    border-bottom-width: 2px;
+    border-radius: 4px;
+
+    top: 100%;
+    box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
+
+    a {
+      @apply tracking-wide py-3 block  px-4 hover:bg-gray-100;
+    }
+  }
+
+  &:hover {
+    .dropdown {
+      @apply opacity-100 visible block;
+    }
+  }
+}

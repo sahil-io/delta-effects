@@ -1,0 +1,18 @@
+.team_card {
+  box-shadow: 0 2px 43px 0 rgb(2 2 2 / 7%);
+  border-radius: 4px;
+  transition: all 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 50px 30px -40px rgb(0 0 0 / 10%);
+  }
+
+  .body {
+    @apply p-6 overflow-hidden;
+    .title {
+      @apply text-lg font-heading sm:whitespace-nowrap;
+    }
+
+  }
+}

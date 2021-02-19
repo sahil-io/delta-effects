@@ -1,0 +1,76 @@
+.button {
+  @apply inline-flex items-center px-4 py-3 border
+  border-transparent leading-4 font-medium rounded
+  tracking-wide
+  shadow-sm
+  focus:outline-none
+  whitespace-nowrap;
+  &-primary {
+    @apply text-white bg-primary hover:bg-primary-700;
+  }
+
+  &-secondary {
+    @apply text-white bg-secondary hover:bg-secondary-700;
+  }
+}
+
+.section {
+  @apply flow-root box-border py-12 md:py-16;
+  &-default {
+    @apply bg-white;
+  }
+
+  &-primary {
+    @apply bg-primary;
+  }
+
+  &-muted {
+    @apply bg-gray-100;
+  }
+
+  &-dark-gray {
+
+    @apply text-white bg-dark-gray;
+  }
+
+}
+
+.panel {
+  @apply relative;
+}
+
+.raw_content {
+  * {
+    @apply text-gray-600;
+    @apply mb-8;
+
+    & + ul {
+      @apply mt-4;
+    }
+
+  }
+
+  p {
+    @apply mb-8;
+    & + p {
+      @apply mt-4;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply mb-4 font-heading text-black;
+
+    & + ul {
+      @apply mt-8;
+    }
+  }
+
+  ul {
+    list-style: square;
+    @apply pl-8;
+  }
+
+  li {
+    @apply mb-6;
+  }
+}

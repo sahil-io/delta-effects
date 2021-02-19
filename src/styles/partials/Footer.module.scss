@@ -1,0 +1,76 @@
+.block_title {
+  @apply font-bold mb-3;
+}
+
+._block {
+  @apply w-1/4 px-6;
+
+  .item {
+    & > a {
+      @apply py-2 block relative pl-3;
+
+      transition: 0.2s ease;
+
+      &::before {
+        content: '';
+        width: 2px;
+        top: 30%;
+        bottom: 30%;
+
+        @apply bg-secondary block absolute left-0;
+      }
+
+      &:hover {
+        color: #222;
+
+        @apply px-4;
+
+        &::before {
+          width: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: theme('screens.md')) {
+  .block_mobile {
+    @apply w-1/2 py-8;
+  }
+}
+
+._block {
+  .link {
+    @apply text-secondary block flex mb-4;
+
+    svg {
+      @apply mr-3;
+    }
+
+    div {
+      @apply text-black;
+    }
+
+    &:hover {
+      @apply text-secondary-700;
+    }
+  }
+}
+
+.legal_grid {
+  @apply flex -m-4 justify-center ;
+
+  & > div {
+    &:not(:first-child) {
+      @apply border-l;
+    }
+
+    a {
+      @apply opacity-50;
+
+      &:hover {
+        @apply opacity-100;
+      }
+    }
+  }
+}

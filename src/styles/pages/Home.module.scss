@@ -1,0 +1,24 @@
+.overlay {
+  @apply absolute inset-0;
+  background-color: rgba(21, 21, 21, 0.8);
+  opacity: 0.8;
+}
+
+.top_a {
+  min-height: 70vh;
+  @apply flex items-center justify-center;
+}
+
+.thumb {
+  @apply rounded-full mx-auto mb-8 flex items-center justify-center;
+}
+
+.service_content {
+  @media (min-width: 768px) {
+    min-height: 79px;
+  }
+  @media (min-width: 1024px) {
+    min-height: 52px;
+  }
+}
+
