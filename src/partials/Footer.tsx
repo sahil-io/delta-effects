@@ -6,6 +6,57 @@ import cn from 'classnames'
 import {event} from "@/lib/gtag";
 import Logo from "@/components/Logo";
 
+const RESOURCES = [
+    {
+        "id": "ckm1n6fqw4t460b19ewnyfcks",
+        "title": "Track Refunds",
+        "externalUrl": "https://www.irs.gov/refunds",
+        "stage": "DRAFT"
+    },
+    {
+        "id": "ckm1n72w84u1y092015qeog98",
+        "title": "Request Transcript",
+        "externalUrl": "https://www.irs.gov/individuals/get-transcript",
+        "stage": "DRAFT"
+    },
+    {
+        "id": "ckm1n7j3k4t780b19auie0sgc",
+        "title": "Pay Taxes By Credit Card",
+        "externalUrl": "https://www.irs.gov/payments/pay-your-taxes-by-debit-or-credit-card",
+        "stage": "DRAFT"
+    },
+    {
+        "id": "ckm1n802o4u3u0920xxbfvgju",
+        "title": "HealthCare.gov",
+        "externalUrl": "https://www.healthcare.gov/",
+        "stage": "DRAFT"
+    }
+
+]
+
+const SERVICES = [
+    {
+        "id": "ckkwd9948dwhz0b74saiuztbi",
+        "slug": "payroll-processing",
+        "title": "Payroll Processing"
+    },
+    {
+        "id": "ckkwdj754dwum0b74uc52oa50",
+        "slug": "bookkeeping",
+        "title": "Bookkeeping"
+    },
+    {
+        "id": "ckkwdnfx4dxvh0977x1mgt16f",
+        "slug": "tax-preparation",
+        "title": "Tax Preparation"
+    },
+    {
+        "id": "ckkwdx9bcdy9b0977srfknzt1",
+        "slug": "start-up-solutions",
+        "title": "Start-Up Solutions"
+    }
+]
+
 class Footer extends PureComponent {
 
     render() {
@@ -16,7 +67,7 @@ class Footer extends PureComponent {
                         <div className="flex justify-between py-8 flex-wrap -my-8 md:-my-0 -px-6">
                             <div className={cn(styles._block, styles.block_mobile)}>
                                 <Link href={"/company"}>
-<Logo/>
+                                    <Logo/>
                                 </Link>
                                 <hr className={"my-4"}/>
                                 <div>
@@ -41,43 +92,19 @@ class Footer extends PureComponent {
                                 <h4 className={styles.block_title}>Services</h4>
                                 <hr className={"mb-3"}/>
                                 <ul>
-                                    <li className={styles.item}><Link
-                                        href={`/our-work`}>Our Work</Link></li>
+                                    {SERVICES.map(service => <li className={styles.item}><Link
+                                        href={`/${service.slug}`}>{service.title}</Link></li>)}
 
-                                    <li className={styles.item}><Link
-                                        href={`/small-business-online-digital-marketing-strategy`}>Digital
-                                        Strategy</Link></li>
-                                    <li className={styles.item}><Link
-                                        href={`/affordable-custom-website-design-development`}>Custom
-                                        Website</Link>
-                                    </li>
-                                    <li className={styles.item}><Link href={`/location-based-seo-optimization`}>Local
-                                        Optimization</Link>
-                                    </li>
-                                    <li className={styles.item}><Link
-                                        href={`/online-business-listings-management-services`}>Business
-                                        Listings</Link></li>
-                                    <li className={styles.item}><Link href={`/google-my-business-management-services`}>Google
-                                        My Business</Link>
-                                    </li>
+
                                 </ul>
                             </div>
                             <div className={cn(styles._block, styles.block_mobile)}>
                                 <h4 className={styles.block_title}>Resources</h4>
                                 <hr className={"mb-3"}/>
                                 <ul>
-                                    <li className={styles.item}><a href={`https://www.searchengineguidelines.com/`}>SEO
-                                        Guidelines</a></li>
-                                    <li className={styles.item}><a
-                                        href={`https://www.searchengineguidelines.com/free-seo-check/`}>Free SEO
-                                        Check</a></li>
-                                    <li className={styles.item}><a href={`https://seoanalysis.org/`}>SEO Analysis</a>
-                                    </li>
-                                    <li className={styles.item}><Link href={`https://simpledns.dev`}>Free DNS
-                                        Checker</Link>
-                                    </li>
-                                    <li className={styles.item}><Link
-                                        href={`https://www.searchengineguidelines.com/glossary/`}>Glossary</Link></li>
+                                    {RESOURCES.map(resource => <li className={styles.item}><a
+                                        href={resource.externalUrl} target={"_blank"}>{resource.title}</a></li>)}
+
                                 </ul>
                             </div>
 

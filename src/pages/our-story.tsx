@@ -22,7 +22,7 @@ const OurStory = ({page}: OurStory_Props) => {
     return (
         <ParallaxProvider>
             <Page>
-                <section className={cn("section section-default relative min-h-screen", styles.top_a)}>
+                <section className={cn("section section-default relative min-h-screen", styles.top_a, styles.align_middle)}>
                     <Image
                         src={featuredImage.url}
                         layout="fill"

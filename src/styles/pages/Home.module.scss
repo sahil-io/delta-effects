@@ -1,12 +1,16 @@
 .overlay {
   @apply absolute inset-0;
-  background-color: rgba(21, 21, 21, 0.8);
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, .16);
+  opacity: 1;
 }
 
 .top_a {
   min-height: 70vh;
-  @apply flex items-center justify-center;
+  @apply flex justify-center md:flex-row-reverse;
+}
+
+.align_middle {
+  @apply items-center;
 }
 
 .thumb {
@@ -22,3 +26,30 @@
   }
 }
 
+.slanted_bg {
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  background-color: #fafaf7;
+  left: 0;
+  right: 40%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+
+  & + svg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.graphic {
+  @apply rounded-full border-gray-500 border border-dashed absolute opacity-25;
+  width: 300px;
+  height: 300px;
+  bottom: -300px;
+  left: -240px;
+}

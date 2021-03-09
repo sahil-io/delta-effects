@@ -21,9 +21,10 @@ const Home = ({services}: Home_Props) => {
                 <Head>
                     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
                 </Head>
-                <section className={cn("section section-default relative min-h-screen", styles.top_a)}>
+                <section
+                    className={cn("section section-default relative min-h-screen", styles.top_a, styles.align_middle)}>
                     <Image
-                        src="/static/assets/images/business_people_meeting.jpg"
+                        src="/static/assets/images/home_header.jpg"
                         layout="fill"
                         objectFit="cover"
                     />
@@ -100,6 +101,28 @@ const Home = ({services}: Home_Props) => {
                             Hundreds Of Small Business Owners Trust Delta's Team With Their Books
                         </h2>
                         <div className="elfsight-app-96e12baa-fa72-4120-836d-56a4dd61a189"></div>
+                    </div>
+                </section>
+                <section className={"section section-default"}>
+                    <div className="container">
+                        <div className="grid md:grid-cols-2 gap-4 items-center">
+                            <div>
+                                <Image src="/static/assets/images/now_open.jpg" objectFit={"cover"} width={800}
+                                       height={500}/>
+                            </div>
+                            <div>
+                                <div className="panel max-w-xl mx-auto relative">
+                                    <h2>Why Delta Effects?</h2>
+                                    <p className={"mt-8"}>
+                                        We are a local company with a community focus. Founded out of Boulder, Colorado,
+                                        we wanted to get away from companies that treat clients like nameless faces or
+                                        dollar signs. We conduct business honestly, guided by lasting core values with a
+                                        focus on providing high quality, fairly priced services to our clients.
+                                    </p>
+                                    <div className={styles.graphic}></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <CTA/>
