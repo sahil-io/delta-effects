@@ -8,6 +8,7 @@ import Link from "next/link";
 import Head from "next/head";
 import {allPages, IPage} from "@/lib/models/Page";
 import CTA from "@/partials/CTA";
+import ReactPlayer from "react-player";
 
 declare interface Home_Props {
     services: IPage[]
@@ -38,10 +39,11 @@ const Home = ({services}: Home_Props) => {
                                     </h1>
 
                                     <p className={"mt-8 text-xl"}>
-                                        Delta Effects is a full-service accounting firm providing accounting and tax
-                                        services
-                                        for
-                                        individuals and small businesses in Boulder, CO.
+
+                                        We provide accounting and tax services for individuals and small businesses, so
+                                        that they can make better, more informed decisions. <b>See what we can do for
+                                        you!</b>
+
                                     </p>
                                     <div className={"mt-8"}>
                                         <Link href={"/contact"}>
@@ -105,15 +107,16 @@ const Home = ({services}: Home_Props) => {
                 </section>
                 <section className={"section section-default"}>
                     <div className="container">
-                        <div className="grid md:grid-cols-2 gap-4 items-center">
+                        <div className="grid lg:grid-cols-2 gap-x-4 items-center gap-y-8">
                             <div>
-                                <Image src="/static/assets/images/now_open.jpg" objectFit={"cover"} width={800}
+                                <Image className={"rounded-lg"} src="/static/assets/images/now_open.jpg"
+                                       objectFit={"cover"} width={800}
                                        height={500}/>
                             </div>
                             <div>
-                                <div className="panel max-w-xl mx-auto relative">
+                                <div className="panel lg:max-w-xl mx-auto relative">
                                     <h2>Why Delta Effects?</h2>
-                                    <p className={"mt-8"}>
+                                    <p className={"mt-4 lg:mt-8"}>
                                         We are a local company with a community focus. Founded out of Boulder, Colorado,
                                         we wanted to get away from companies that treat clients like nameless faces or
                                         dollar signs. We conduct business honestly, guided by lasting core values with a
@@ -124,6 +127,33 @@ const Home = ({services}: Home_Props) => {
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <section className={"bg-gray-100 py-20"}>
+                    <div className="container">
+                        <div className="grid lg:grid-cols-2 gap-x-4 gap-y-8 items-center">
+                            <div className={"lg:order-last"}>
+                                <ReactPlayer controls={true} width='100%'
+                                             height={440}
+                                             url={`https://www.youtube-nocookie.com/embed/PSoqVhwls7A?rel=0`}/>
+                            </div>
+                            <div>
+                                <div className="panel lg:max-w-xl mx-auto relative">
+                                    <h2>Who We Are?</h2>
+                                    <p className={"mt-4 lg:mt-8"}>
+                                        Delta Effects, LLC is one of the leading firms in the area. By combining our
+                                        expertise, experience and the energy of our staff, each client receives close
+                                        personal and professional attention. Our high standards, service and specialized
+                                        staff spell the difference between our outstanding performance and that of other
+                                        firms. We make sure that every client is served by the expertise of our whole
+                                        firm.
+                                    </p>
+                                    <div className={styles.graphic}></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </section>
                 <CTA/>
             </Page>

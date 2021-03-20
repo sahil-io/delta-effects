@@ -3,7 +3,10 @@
 }
 
 ._block {
-  @apply w-1/4 px-6;
+  @apply w-1/5 px-6;
+  &.first {
+    @apply w-1/3;
+  }
 
   .item {
     & > a {

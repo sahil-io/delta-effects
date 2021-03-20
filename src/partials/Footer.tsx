@@ -64,16 +64,20 @@ class Footer extends PureComponent {
             <footer className="py-10 md:py-20 md:pb-12 bg-muted border-t" style={{borderTopColor: '#eaeaea'}}>
                 <div className="container">
                     <div className="overflow-hidden">
-                        <div className="flex justify-between py-8 flex-wrap -my-8 md:-my-0 -px-6">
-                            <div className={cn(styles._block, styles.block_mobile)}>
+                        <div className="flex justify-between py-8 flex-wrap -my-8 md:-my-0 -mx-6">
+                            <div className={cn(styles.first, styles._block, styles.block_mobile)}>
                                 <Link href={"/company"}>
                                     <Logo/>
                                 </Link>
                                 <hr className={"my-4"}/>
                                 <div>
                                     <p className="text-sm">
-                                        Local SEO provides the most affordable small business digital marketing
-                                        solution, starting at $399/month for a new website, SEO & more.
+                                        Delta Effects, LLC is one of the leading firms in the area. By combining our
+                                        expertise, experience and the energy of our staff, each client receives close
+                                        personal and professional attention. Our high standards, service and specialized
+                                        staff spell the difference between our outstanding performance and that of other
+                                        firms. We make sure that every client is served by the expertise of our whole
+                                        firm.
                                     </p>
                                 </div>
                                 <div className={"overflow-hidden mt-3"}>
@@ -107,7 +111,6 @@ class Footer extends PureComponent {
 
                                 </ul>
                             </div>
-
                             <div className={cn(styles._block, styles.block_mobile)}>
                                 <h4 className={styles.block_title}>Contact Us</h4>
                                 <hr className={"mb-3"}/>
