@@ -17,7 +17,7 @@ const PageSlug = ({page, faqs}: { page: IPage, faqs: IFaq[] }) => {
 
     return (
         <ParallaxProvider>
-            <Page>
+            <Page title={`${title} Services in Boulder, CO | Delta Effects, LLC`}>
                 <section className={cn("section-default flex-wrap relative min-h-screen", styles.top_a)}>
                     <div className={"relative w-full md:w-1/2 z-10 md:z-0"}>
                         <Image

@@ -35,6 +35,8 @@ function MyApp({Component, pageProps}) {
                 {/*<link href='/icons/favicon-32x32.png' rel='icon' type='image/png' sizes='32x32'/>*/}
                 {/*<link rel="apple-touch-icon" href="/icons/apple-icon-152x152.png"></link>*/}
                 <meta name="theme-color" content="#1A73E8"/>
+                <link rel="shortcut icon" type="image/jpg" href="/static/assets/images/favicon.png"/>
+
                 <meta name="viewport"
                       content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
             </Head>

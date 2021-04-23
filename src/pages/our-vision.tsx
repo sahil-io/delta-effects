@@ -21,7 +21,7 @@ const OurVision = ({page}: OurVision_Props) => {
 
     return (
         <ParallaxProvider>
-            <Page>
+            <Page title={`Our Vision | Delta Effects, LLC`}>
                 <section
                     className={cn("section section-default relative min-h-screen", styles.top_a, styles.align_middle)}>
                     <Image

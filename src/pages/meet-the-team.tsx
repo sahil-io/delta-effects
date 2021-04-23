@@ -12,7 +12,8 @@ declare interface MeetTheTeam_Props {
 const MeetTheTeam = ({members}: MeetTheTeam_Props) => {
 
     return (
-        <Page>
+        <Page title={`Meet Your Team of IRS Enrolled Agents at Delta Effects`}
+        description={`Our accounting & tax firm has grown to include a number of talented tax consultants. Get to know your consultant & their tax experience here.`}>
             <section className={"section section-dark-gray"}>
                 <div className="container text-center">
                     <h1 className={"mb-4"}>

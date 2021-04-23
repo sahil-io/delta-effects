@@ -22,7 +22,9 @@ const Home = ({services, faqs}: Home_Props) => {
 
     return (
         <ParallaxProvider>
-            <Page>
+            <Page title={`Boulder Bookkeeping, Accountants & Accounting Firm | Delta Effects, LLC`}
+            description={`Delta Effects' Boulder accountants provide a wide variety of accounting, tax, bookkeeping and financial management services.`}
+            >
                 <Head>
                     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
                 </Head>

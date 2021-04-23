@@ -9,11 +9,9 @@ import styles from "@/styles/pages/Contact.module.scss"
 
 const Contact = () => {
     return (
-        <Page>
-            <Head>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" defer/>
-
-            </Head>
+        <Page title={"Contact Delta Effects | Book An Appointment"}
+              description={`Book an appointment with Delta Effects' Boulder accountants. Delta Effects provide a wide variety of accounting, tax, bookkeeping and financial management services.`}
+        >
             <section className={"section section-default pb-0"}>
                 <style
                     jsx>{`@media (min-width: 800px) {.calendly-inline-widget {height: 751px!important;min-width:320px;}}`}</style>
@@ -35,7 +33,7 @@ const Contact = () => {
                                     padding: '0 0 60px 0',
                                     backgroundImage: 'linear-gradient(180deg, #fff 50%, rgb(68,68,68) 50%)'
                                 }}
-                                url="https://calendly.com/delta-effects-admin/30min" pageSettings={{
+                                url="https://calendly.com/delta-effects-admin/15min" pageSettings={{
                                 hideEventTypeDetails: true,
                                 hideLandingPageDetails: true,
                                 primaryColor: "174579"

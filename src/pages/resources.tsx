@@ -15,7 +15,9 @@ declare interface Resources_Props {
 const Resources = ({resources, faqs}: Resources_Props) => {
 
     return (
-        <Page>
+        <Page title={`Resources | Delta Effects, LLC`}
+            description={`Find important links on Delta Effects' resources page. Contact us for a wide variety of accounting, tax, bookkeeping and financial management services.`}
+        >
             <section className={"section section-dark-gray"}>
                 <div className="container text-center">
                     <h1 className={"mb-4"}>
