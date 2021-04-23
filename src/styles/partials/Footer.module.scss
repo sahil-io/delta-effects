@@ -39,6 +39,10 @@
 @media screen and (max-width: theme('screens.md')) {
   .block_mobile {
     @apply w-1/2 py-8;
+    &.first, &.last{
+      @apply w-full;
+    }
+
   }
 }
 

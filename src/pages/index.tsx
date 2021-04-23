@@ -9,12 +9,16 @@ import Head from "next/head";
 import {allPages, IPage} from "@/lib/models/Page";
 import CTA from "@/partials/CTA";
 import ReactPlayer from "react-player";
+import {allFaqs, IFaq} from "@/lib/models/FAQ";
+import Accordion from "@/components/Accordion";
 
 declare interface Home_Props {
     services: IPage[]
+    faqs: IFaq[]
 }
 
-const Home = ({services}: Home_Props) => {
+const Home = ({services, faqs}: Home_Props) => {
+
 
     return (
         <ParallaxProvider>
@@ -70,7 +74,7 @@ const Home = ({services}: Home_Props) => {
                                 Choose the service that's right for you
                             </h2>
                             <div className={"mt-16"}>
-                                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-16 gap-4">
                                     {services.map(({title, graphic, shortDescription, intro, slug, id}) => {
                                         return (
                                             <div key={id}>
@@ -107,7 +111,7 @@ const Home = ({services}: Home_Props) => {
                 </section>
                 <section className={"section section-default"}>
                     <div className="container">
-                        <div className="grid lg:grid-cols-2 gap-x-4 items-center gap-y-8">
+                        <div className="grid lg:grid-cols-2 gap-x-12 items-center gap-y-8">
                             <div>
                                 <Image className={"rounded-lg"} src="/static/assets/images/now_open.jpg"
                                        objectFit={"cover"} width={800}
@@ -131,7 +135,7 @@ const Home = ({services}: Home_Props) => {
 
                 <section className={"bg-gray-100 py-20"}>
                     <div className="container">
-                        <div className="grid lg:grid-cols-2 gap-x-4 gap-y-8 items-center">
+                        <div className="grid lg:grid-cols-2 gap-x-16 gap-y-8 items-center">
                             <div className={"lg:order-last"}>
                                 <ReactPlayer controls={true} width='100%'
                                              height={440}
@@ -156,6 +160,7 @@ const Home = ({services}: Home_Props) => {
 
                 </section>
                 <CTA/>
+                <Accordion questionsAnswers={faqs}/>
             </Page>
         </ParallaxProvider>
     )
@@ -164,10 +169,13 @@ const Home = ({services}: Home_Props) => {
 export async function getStaticProps() {
 
     const res = await allPages(true)
+    const faqs = await allFaqs()
+
 
     return {
         props: {
-            services: res
+            services: res,
+            faqs
         }
     }
 }

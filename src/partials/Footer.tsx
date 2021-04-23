@@ -96,7 +96,7 @@ class Footer extends PureComponent {
                                 <h4 className={styles.block_title}>Services</h4>
                                 <hr className={"mb-3"}/>
                                 <ul>
-                                    {SERVICES.map(service => <li className={styles.item}><Link
+                                    {SERVICES.map(service => <li key={service.id} className={styles.item}><Link
                                         href={`/${service.slug}`}>{service.title}</Link></li>)}
 
 
@@ -111,7 +111,7 @@ class Footer extends PureComponent {
 
                                 </ul>
                             </div>
-                            <div className={cn(styles._block, styles.block_mobile)}>
+                            <div className={cn(styles._block, styles.block_mobile, styles.last)}>
                                 <h4 className={styles.block_title}>Contact Us</h4>
                                 <hr className={"mb-3"}/>
                                 <div>

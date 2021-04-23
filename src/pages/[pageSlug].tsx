@@ -8,23 +8,25 @@ import {allPages, IPage, singlePage} from "@/lib/models/Page";
 import Page from "@/layouts/Page";
 import CTA from "@/partials/CTA";
 import Image from 'next/image'
+import {allFaqs, IFaq} from "@/lib/models/FAQ";
+import Accordion from "@/components/Accordion";
 
-const PageSlug = ({page}: { page: IPage }) => {
+const PageSlug = ({page, faqs}: { page: IPage, faqs: IFaq[] }) => {
 
     const {title, intro, featuredImage} = page
 
     return (
         <ParallaxProvider>
             <Page>
-                <section className={cn("section-default relative min-h-screen", styles.top_a)}>
-                    <div className={"relative w-1/2"}>
+                <section className={cn("section-default flex-wrap relative min-h-screen", styles.top_a)}>
+                    <div className={"relative w-full md:w-1/2 z-10 md:z-0"}>
                         <Image
                             src={featuredImage.url}
                             layout="fill"
                             objectFit="cover"
                         />
                     </div>
-                    <div className={"w-1/2 flex items-center justify-center"}>
+                    <div className={"w-full md:w-1/2 flex items-center px-6 justify-center"}>
                         <div className={styles.slanted_bg}></div>
                         <svg viewBox="0 0 1440 432">
                             <g fill="#CCBDB2" fillRule="evenodd">
@@ -73,6 +75,7 @@ const PageSlug = ({page}: { page: IPage }) => {
                     </div>
                 </section>
                 <CTA/>
+                <Accordion questionsAnswers={faqs}/>
             </Page>
         </ParallaxProvider>
     )
@@ -94,14 +97,17 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({params}) => {
     const {pageSlug} = params
     const page = await singlePage(pageSlug)
+
     if (!page) {
         return {
             notFound: true,
         }
     }
+    const faqs = await allFaqs()
     return {
         props: {
             page,
+            faqs
         },
     }
 }

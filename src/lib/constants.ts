@@ -1,7 +1,8 @@
 export const SITE_URL: string = 'https://www.delta-effects.com';
 export const ORG_NAME: string = 'Delta Effects';
-export const CONTACT_PHONE: string = '1-833-468-7265';
-export const COMPANY_ADDRESS: string[] = ['6525 Gunpark Dr.', 'Boulder, CO 80204'];
+export const CONTACT_PHONE: string = '(720) 542-8235)';
+export const CONTACT_PHONE_HREF: string = 'tel:+17205428235';
+export const COMPANY_ADDRESS: string[] = ['6525 Gunpark Dr. #320', 'Boulder, CO 80204'];
 export const CONTACT_EMAIL: string = 'info@delta-effects.com';
 export const DEV_MODE: boolean = process.env.NODE_ENV === 'development';
 

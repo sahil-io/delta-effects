@@ -22,12 +22,80 @@ const MobileMenu = ({isOpen, onClick, children}) => {
                     animationDuration={0.5}
                 />
             </div>
-            {isOpen && <div className="absolute shadow-xl top-0 left-0 right-0" style={{top: `52px`}}>
-				<div className="bg-white p-4">
+            {isOpen && <div className="absolute shadow-xl top-0 left-0 right-0" style={{top: `69px`}}>
+				<div className="bg-white p-8 pt-4">
                     {children}
 				</div>
 			</div>}
         </div>
+    )
+}
+
+const NavItems = ({navigation}) => {
+    return (
+        <>
+            <div className="hidden sm:flex sm:space-x-8 w-full justify-end sm:mr-8">
+                {navigation.map((item, idx) => <NavItem key={idx} navItem={item}/>)}
+
+            </div>
+
+            <div className="hidden sm:ml-6 sm:flex sm:items-center">
+                <Link href={"/contact"}>
+                    <a className="button button-primary">
+                        Book An Appointment
+                    </a>
+                </Link>
+            </div>
+        </>
+    )
+}
+
+
+const MobileNavItems = ({navigation}) => {
+    return (
+        <>
+            <div className="block">
+                {navigation.map((navItem, idx) => <div key={idx}>
+
+                    <>
+                        {navItem.path && <Link href={navItem.path}>
+                            <a className="text-gray-900 block px-1 mt-4 pt-1 border-b-2  text-sm font-medium">
+                                {navItem.title}
+                            </a>
+                        </Link>
+
+                        }
+                        {!navItem.path && <div>
+                            <span className="text-gray-500 uppercase block px-1 pt-1 mt-4 border-b-2  text-sm font-medium">
+                                {navItem.title}
+                            </span>
+
+                            {navItem.children && <div className={styles.dropdown}>
+                                <ul className={"pl-2"}>
+                                    {navItem.children.map((item, idx) => {
+                                        return (<li key={idx}>
+                                            <Link href={item.path}>
+                                                <a className={"text-gray-900 block px-1 pt-3  text-sm font-medium"}>
+                                                {item.title}
+                                                </a>
+                                            </Link>
+                                        </li>)
+                                    })}
+                                </ul>
+                            </div>}
+                        </div>}
+                    </>
+                </div>)}
+            </div>
+
+            <div className="hidden sm:ml-6 sm:flex sm:items-center">
+                <Link href={"/contact"}>
+                    <a className="button button-primary">
+                        Book An Appointment
+                    </a>
+                </Link>
+            </div>
+        </>
     )
 }
 
@@ -42,7 +110,7 @@ const NavItem = ({navItem}) => {
 
             }
             {!navItem.path && <div
-				className={cn("cursor-pointer text-gray-900 inline-flex items-center border-transparent px-1 pt-1 border-b-2 text-sm font-medium", navItem.children && styles.dropdown_parent)}>
+				className={cn("whitespace-nowrap cursor-pointer white text-gray-900 inline-flex items-center border-transparent px-1 pt-1 border-b-2 text-sm font-medium", navItem.children && styles.dropdown_parent)}>
                 {navItem.title}
                 {navItem.children && <div className={styles.dropdown}>
 					<ul>
@@ -117,7 +185,7 @@ const Navbar = () => {
     return (
         <div className="">
             <nav className="bg-white shadow">
-                <div className="container">
+                <div className="px-8 xl:container">
                     <div className="flex justify-between h-20">
                         <div className="flex-shrink-0 flex items-center">
                             <Link href={"/"}>
@@ -127,39 +195,11 @@ const Navbar = () => {
                             </Link>
                         </div>
 
-                        <div className="hidden sm:flex sm:space-x-8 w-full justify-end sm:mr-8">
-                            {navigation.map((item, idx) => <NavItem key={idx} navItem={item}/>)}
-
-                        </div>
-
-                        <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                            <Link href={"/contact"}>
-                                <a className="button button-primary">
-                                    Book An Appointment
-                                </a>
-                            </Link>
-                        </div>
-                        <div className="-mr-2 flex items-center sm:hidden">
-                            <button
-                                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                                aria-expanded="false">
-                                <span className="sr-only">Open main menu</span>
-
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    ></path>
-                                </svg>
-                            </button>
+                        <NavItems navigation={navigation}/>
+                        <div className="flex items-center sm:hidden">
+                            <MobileMenu onClick={menuClicked} isOpen={hamOpen}>
+                                <MobileNavItems navigation={navigation}/>
+                            </MobileMenu>
                         </div>
                     </div>
                 </div>
@@ -198,11 +238,11 @@ const Navbar = () => {
                                     viewBox="0 0 24 24"
                                 >
                                     <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                                    ></path>
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+    />
                                 </svg>
                             </button>
                         </div>
@@ -216,8 +256,11 @@ const Navbar = () => {
                                className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Sign
                                 out</a>
                         </div>
+
                     </div>
+
                 </div>
+
 
             </nav>
         </div>

@@ -4,12 +4,15 @@ import React from "react";
 import {allResources, IResource} from "@/lib/models/Resource";
 import Link from "next/link";
 import styles from "@/styles/pages/resources.module.scss"
+import {allFaqs, IFaq} from "@/lib/models/FAQ";
+import Accordion from "@/components/Accordion";
 
 declare interface Resources_Props {
     resources: IResource[]
+    faqs: IFaq[]
 }
 
-const Resources = ({resources}: Resources_Props) => {
+const Resources = ({resources, faqs}: Resources_Props) => {
 
     return (
         <Page>
@@ -43,16 +46,19 @@ const Resources = ({resources}: Resources_Props) => {
                     </div>
                 </div>
             </section>
+            <Accordion questionsAnswers={faqs}/>
         </Page>
     )
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const data = await allResources()
+    const faqs = await allFaqs()
 
     return {
         props: {
-            resources: data
+            resources: data,
+            faqs
         },
     }
 }
