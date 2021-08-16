@@ -33,7 +33,7 @@ const Contact = () => {
                                     padding: '0 0 60px 0',
                                     backgroundImage: 'linear-gradient(180deg, #fff 50%, rgb(68,68,68) 50%)'
                                 }}
-                                url="https://calendly.com/delta-effects-admin/website-appointment" pageSettings={{
+                                url="https://calendly.com/delta-effects/website-appointment" pageSettings={{
                                 hideEventTypeDetails: true,
                                 hideLandingPageDetails: true,
                                 primaryColor: "174579"
