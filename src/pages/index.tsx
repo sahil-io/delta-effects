@@ -108,7 +108,7 @@ const Home = ({services, faqs}: Home_Props) => {
                         <h2 className={"mb-8 text-center text-lg text-gray-400 tracking-wider font-normal uppercase"}>
                             Hundreds Of Small Business Owners Trust Delta's Team With Their Books
                         </h2>
-                        <div className="elfsight-app-96e12baa-fa72-4120-836d-56a4dd61a189"></div>
+                        <div className="elfsight-app-a042daa2-999a-49c8-bc44-81aeaa213b2f"/>
                     </div>
                 </section>
                 <section className={"section section-default"}>
