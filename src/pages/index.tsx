@@ -5,12 +5,13 @@ import styles from '@/styles/pages/Home.module.scss'
 import cn from 'classnames'
 import {Parallax, ParallaxProvider} from 'react-scroll-parallax'
 import Link from "next/link";
-import Head from "next/head";
 import {allPages, IPage} from "@/lib/models/Page";
 import CTA from "@/partials/CTA";
 import ReactPlayer from "react-player";
 import {allFaqs, IFaq} from "@/lib/models/FAQ";
 import Accordion from "@/components/Accordion";
+import Script from "next/script";
+import HomeHeaderImage from "../../public/static/assets/images/home_header.jpg"
 
 declare interface Home_Props {
     services: IPage[]
@@ -23,16 +24,15 @@ const Home = ({services, faqs}: Home_Props) => {
     return (
         <ParallaxProvider>
             <Page title={`Boulder Bookkeeping, Accountants & Accounting Firm | Delta Effects, LLC`}
-            description={`Delta Effects' Boulder accountants provide a wide variety of accounting, tax, bookkeeping and financial management services.`}
+                  description={`Delta Effects' Boulder accountants provide a wide variety of accounting, tax, bookkeeping and financial management services.`}
             >
-                <Head>
-                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                </Head>
+                <Script src="https://apps.elfsight.com/p/platform.js" defer/>
+
                 <section
                     className={cn("section section-default relative min-h-screen", styles.top_a, styles.align_middle)}>
                     <Image
-                        src="/static/assets/images/home_header.jpg"
-                        layout="fill"
+                        src={HomeHeaderImage}
+                        priority layout={"fill"}
                         objectFit="cover"
                     />
                     <div className={styles.overlay}></div>
@@ -81,7 +81,7 @@ const Home = ({services, faqs}: Home_Props) => {
                                         return (
                                             <div key={id}>
                                                 <div className={styles.thumb}>
-                                                    <Image width={95} height={95} src={graphic.url}/>
+                                                    <img width={95} height={95} src={graphic.url} loading={"lazy"} decoding={"async"}/>
                                                 </div>
                                                 <h3 className={"text-2xl font-heading"}>
                                                     {title}

@@ -106,7 +106,7 @@ class Footer extends PureComponent {
                                 <h4 className={styles.block_title}>Resources</h4>
                                 <hr className={"mb-3"}/>
                                 <ul>
-                                    {RESOURCES.map(resource => <li className={styles.item}><a
+                                    {RESOURCES.map(resource => <li key={resource.id} className={styles.item}><a
                                         href={resource.externalUrl} target={"_blank"}>{resource.title}</a></li>)}
 
                                 </ul>

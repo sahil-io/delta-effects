@@ -29,7 +29,7 @@ function MyApp({Component, pageProps}) {
     return (
         <>
             <Head>
-                <link rel="stylesheet" href="https://use.typekit.net/oee8iit.css"/>
+
                 {/*<link rel="manifest" href="/manifest.json"/>*/}
                 {/*<link href='/icons/favicon-16x16.png' rel='icon' type='image/png' sizes='16x16'/>*/}
                 {/*<link href='/icons/favicon-32x32.png' rel='icon' type='image/png' sizes='32x32'/>*/}

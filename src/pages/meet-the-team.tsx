@@ -30,10 +30,10 @@ const MeetTheTeam = ({members}: MeetTheTeam_Props) => {
                         <h2 className={"mb-12 text-center"}>
                             Team Members
                         </h2>
-                        <div className={"flex justify-center -m-6"}>
+                        <div className={"flex justify-center -m-6 flex-wrap"}>
                             {members.map(member => {
                                 return (
-                                    <div className={"p-6 lg:w-1/3 2xl:w-1/4"} key={member.id}>
+                                    <div className={"p-6 w-full lg:w-1/3 2xl:w-1/4"} key={member.id}>
                                         <div className={styles.team_card}>
                                             <div className="header relative">
                                                 <canvas height={400}></canvas>

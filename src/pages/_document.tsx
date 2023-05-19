@@ -15,6 +15,7 @@ class NextSite extends Document {
                         type="font/woff2"
                         crossOrigin="anonymous"
                     />
+                    <link rel="stylesheet" href="https://use.typekit.net/oee8iit.css"/>
                 </Head>
                 <body>
                 <Main/>
